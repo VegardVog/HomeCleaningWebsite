@@ -21,14 +21,12 @@ public class WebCleaningController {
   private UserService userService;
 
   @GetMapping
-  @CrossOrigin(origins = "http://localhost:3000")
   public ResponseEntity<List<User>> getAllUsers() {
     return new ResponseEntity<List<User>>(userService.allUsers(), HttpStatus.OK);
   }
 
 
   @GetMapping("/{name}")
-  @CrossOrigin(origins = "http://localhost:3000")
   public ResponseEntity<Optional<User>> getSingleUser(@PathVariable String name) {
     return new ResponseEntity<Optional<User>>(userService.getUserFromName(name), HttpStatus.OK);
   }

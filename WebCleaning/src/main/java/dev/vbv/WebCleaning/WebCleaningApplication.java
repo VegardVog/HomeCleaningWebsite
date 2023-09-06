@@ -15,6 +15,7 @@ public class WebCleaningApplication {
 		SpringApplication.run(WebCleaningApplication.class, args);
 	}
 
+    
 	
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -22,6 +23,7 @@ public class WebCleaningApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedOrigins("http://localhost:3000");
+                registry.addMapping("/**").allowCredentials(true);
             }
         };
 
