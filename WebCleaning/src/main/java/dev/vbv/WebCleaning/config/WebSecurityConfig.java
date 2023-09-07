@@ -21,7 +21,9 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       return http
           // .formLogin(Customizer.withDefaults())
+          // .authorizeHttpRequests((authorize) -> authorize.requestMatchers("login").anyRequest().authenticated())
           .cors(cors -> cors.disable()) 
+          .csrf((csrf -> csrf.disable()))
           .build();
         }
 
