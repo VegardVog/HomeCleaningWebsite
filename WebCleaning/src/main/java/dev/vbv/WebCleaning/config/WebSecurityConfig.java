@@ -21,7 +21,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       return http
           // .formLogin(Customizer.withDefaults())
-          .cors(cors -> cors.disable())
+          .cors(cors -> cors.disable()) 
           .build();
         }
 
