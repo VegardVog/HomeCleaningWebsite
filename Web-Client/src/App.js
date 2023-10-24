@@ -1,0 +1,24 @@
+import "./App.css";
+import api from "./api/axiosConfig";
+import React, { useState, useEffect, Component } from "react";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import UsersPage from "./pages/UsersPage";
+import CreateUserPage from "./pages/CreateUserPage";
+import LoginUserPage from "./pages/LoginUserPage";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path={"*"} Component={HomePage} />
+        <Route path={"users"} Component={UsersPage} />
+        <Route path={"createuser"} Component={CreateUserPage} />
+        <Route path={"login"} Component={LoginUserPage} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
