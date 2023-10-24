@@ -46,13 +46,13 @@ public class UserService {
       Optional<User> user = userRepository.findUserByName(name);
       User newUser= user.get();
       if(newUser.getPassword().equals(password) ) {
-
+        System.out.println("----------------------true");
         return true;
       }
+      
 
     }
-    
-    
+    System.out.println("----------------------false");
     return false;
   } 
   

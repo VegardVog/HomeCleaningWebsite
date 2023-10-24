@@ -7,8 +7,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
-
-@SpringBootApplication
+/*If error mongodb localhost 27017, adding runinng and removing exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class} worked */
+@SpringBootApplication()
 public class WebCleaningApplication {
 
 	public static void main(String[] args) {
