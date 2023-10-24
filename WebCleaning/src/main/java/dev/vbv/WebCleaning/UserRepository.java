@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends MongoRepository<User, ObjectId> {
   Optional<User> findUserByName(String name);
-  Boolean findUserExistByName(String name);
+  
   
 
 }

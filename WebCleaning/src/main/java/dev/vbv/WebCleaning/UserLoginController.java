@@ -13,17 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api/v1/createuser")
-public class UserController {
+@RequestMapping("/api/v1/login")
+public class UserLoginController {
   
   @Autowired
   private UserService userService;
 
   @PostMapping
-  public ResponseEntity<String> createUser(@RequestBody Map<String, String> payload) {
-    // return new ResponseEntity<User>(userService.createUser(payload.get("name"), payload.get("password")), HttpStatus.CREATED);
-    return new ResponseEntity<String>(userService.createUser(payload.get("name"), payload.get("password")), HttpStatus.CREATED);
+  public ResponseEntity<Boolean> loginUser(@RequestBody Map<String, String> payload) {
+    return new ResponseEntity<Boolean>(userService.loginUser(payload.get("name"), payload.get("password")), HttpStatus.ACCEPTED);
   }
 }
-
-
