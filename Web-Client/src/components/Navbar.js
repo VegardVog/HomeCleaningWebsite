@@ -72,13 +72,13 @@ const Navbar = () => {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="myPage">
                       My page
                     </a>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="statisticsPage">
                       Statistics
                     </a>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="goalsPage">
                       Goals
                     </a>
                   </div>
