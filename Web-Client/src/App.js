@@ -7,9 +7,11 @@ import HomePage from "./pages/HomePage";
 import UsersPage from "./pages/UsersPage";
 import CreateUserPage from "./pages/CreateUserPage";
 import LoginUserPage from "./pages/LoginUserPage";
+import LeaderboardPage from "./pages/LeaderboardPage";
 import StatisticsPage from "./pages/Profile/StatisticsPage";
 import GoalsPage from "./pages/Profile/GoalsPage";
 import MyPage from "./pages/Profile/MyPage";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -20,6 +22,7 @@ const App = () => {
         <Route path={"login"} Component={LoginUserPage} />
         <Route path={"statisticsPage"} Component={StatisticsPage} />
         <Route path={"myPage"} Component={MyPage} />
+        <Route path={"leaderboardPage"} Component={LeaderboardPage} />
         <Route path={"goalsPage"} Component={GoalsPage} />
       </Routes>
     </BrowserRouter>
