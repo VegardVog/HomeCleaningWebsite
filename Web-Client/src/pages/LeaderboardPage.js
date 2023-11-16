@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import api from "../api/axiosConfig";
+import "../css/LeaderboardPage.css";
 
 const LeaderboardPage = () => {
   const [returnValues, setReturnValues] = useState([]);
@@ -15,10 +16,17 @@ const LeaderboardPage = () => {
 
           let responseList = response.data;
           responseList.sort(compare);
+          let outerListEl = document.getElementById("outerList");
+
+          //Remove all existing children of outerlist
+          while (outerListEl.lastChild) {
+            console.log(outerListEl.lastChild);
+            outerListEl.removeChild(outerListEl.lastChild);
+          }
 
           response.data.forEach((element) => {
             let statistics = element.name + ": ";
-            let outerListEl = document.getElementById("outerList");
+
             let liEL = document.createElement("li");
             liEL.setAttribute("id", element.name);
 
