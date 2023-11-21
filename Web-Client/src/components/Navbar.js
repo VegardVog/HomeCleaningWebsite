@@ -72,8 +72,8 @@ const Navbar = () => {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <a className="dropdown-item" href="myPage">
-                      My page
+                    <a className="dropdown-item" href="inputValuesPage">
+                      Input values
                     </a>
                     <a className="dropdown-item" href="statisticsPage">
                       Statistics

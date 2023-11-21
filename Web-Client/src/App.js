@@ -10,7 +10,7 @@ import LoginUserPage from "./pages/LoginUserPage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 import StatisticsPage from "./pages/Profile/StatisticsPage";
 import GoalsPage from "./pages/Profile/GoalsPage";
-import MyPage from "./pages/Profile/MyPage";
+import InputValuesPage from "./pages/Profile/InputValuesPage";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
         <Route path={"createuser"} Component={CreateUserPage} />
         <Route path={"login"} Component={LoginUserPage} />
         <Route path={"statisticsPage"} Component={StatisticsPage} />
-        <Route path={"myPage"} Component={MyPage} />
+        <Route path={"inputValuesPage"} Component={InputValuesPage} />
         <Route path={"leaderboardPage"} Component={LeaderboardPage} />
         <Route path={"goalsPage"} Component={GoalsPage} />
       </Routes>

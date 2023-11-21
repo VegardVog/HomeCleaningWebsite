@@ -1,0 +1,33 @@
+#listWrapper {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+#outerList {
+  list-style-type: none;
+  padding-top: 10vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.listEntry {
+  border: solid 1px black;
+  margin-bottom: 2vh;
+  padding-bottom: 1.5vh;
+  padding-top: 1.5vh;
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #cef2f2;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.listEntry:hover {
+  padding-bottom: 3vh;
+  padding-top: 3vh;
+  border-radius: 50px;
+}

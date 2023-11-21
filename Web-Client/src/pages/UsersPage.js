@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import api from "../api/axiosConfig";
 import React, { useState, useEffect } from "react";
+import "../css/UsersPage.css";
+import "../css/Basic.css";
 
 const UsersPage = () => {
   const [users, setUsers] = useState();
@@ -21,9 +23,8 @@ const UsersPage = () => {
 
   return (
     <>
-      <div className="usersPageWrapper">
-        <Navbar />
-        <div>UsersPage</div>
+      <Navbar />
+      <div id="usersPageWrapper" className="pageWrapper">
         <ul>
           {users != undefined &&
             users.length > 0 &&
