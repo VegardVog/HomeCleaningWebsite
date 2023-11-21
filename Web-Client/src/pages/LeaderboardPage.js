@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import api from "../api/axiosConfig";
+import s from "../css/LeaderboardPage.module.css";
+import "../css/Basic.css";
 
 const LeaderboardPage = () => {
   const [returnValues, setReturnValues] = useState([]);
@@ -15,12 +17,19 @@ const LeaderboardPage = () => {
 
           let responseList = response.data;
           responseList.sort(compare);
+          let outerListEl = document.getElementById(s.outerList);
+
+          //Remove all existing children of outerlist
+          while (outerListEl.lastChild) {
+            console.log(outerListEl.lastChild);
+            outerListEl.removeChild(outerListEl.lastChild);
+          }
 
           response.data.forEach((element) => {
             let statistics = element.name + ": ";
-            let outerListEl = document.getElementById("outerList");
+
             let liEL = document.createElement("li");
-            liEL.setAttribute("id", element.name);
+            liEL.setAttribute("class", s.listEntry);
 
             for (const [key, value] of Object.entries(element.statistics)) {
               statistics = statistics + ", " + key + " " + value;
@@ -56,13 +65,13 @@ const LeaderboardPage = () => {
   console.log(returnValues);
 
   return (
-    <div className="homePageWrapper">
+    <>
       <Navbar />
-      LeaderboardPage
-      <div id="listWrapper">
-        <ul id="outerList"></ul>
+
+      <div id={s.listWrapper} className="pageWrapper">
+        <ul id={s.outerList}></ul>
       </div>
-    </div>
+    </>
   );
 };
 

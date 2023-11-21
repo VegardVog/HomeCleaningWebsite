@@ -4,8 +4,6 @@
   border: 3px solid green;
   padding: 10px;
   text-align: center;
-}
-
-html {
-  background-color: green;
+  margin-top: 7vh;
+  background-color: #cef2f2;
 }

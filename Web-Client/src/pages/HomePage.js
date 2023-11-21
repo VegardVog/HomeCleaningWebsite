@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import "../css/HomePage.css";
+import s from "../css/HomePage.module.css";
 import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
-  const [skyScraperHeight, setSkyScraperHeight] = useState(1800);
-  const [garbageHeight, setGarbageHeight] = useState(250);
+  const [skyScraperHeight, setSkyScraperHeight] = useState(0);
+  const [garbageHeight, setGarbageHeight] = useState(0);
 
   function getCurrentDimension() {
     return {
@@ -27,16 +27,19 @@ const HomePage = () => {
     window.addEventListener("scroll", updateDimension);
 
     if (
-      screenSize.scrollY / (screenSize.height - screenSize.innerHeight) <
-      0.6
+      -screenSize.scrollY / (screenSize.height - screenSize.innerHeight) <
+      0.7
     ) {
-      setSkyScraperHeight((1800 * screenSize.scrollY) / 700);
+      console.log(
+        -screenSize.scrollY / (screenSize.height - screenSize.innerHeight)
+      );
+      setSkyScraperHeight((1300 * screenSize.scrollY) / 900);
     }
     if (
-      screenSize.scrollY / (screenSize.height - screenSize.innerHeight) <
-      0.9
+      -screenSize.scrollY / (screenSize.height - screenSize.innerHeight) <
+      1
     ) {
-      setGarbageHeight((250 * screenSize.scrollY) / 300);
+      setGarbageHeight((200 * screenSize.scrollY) / 400);
     }
 
     if (
@@ -56,25 +59,25 @@ const HomePage = () => {
 
       <div className="homePageContentWrapper">
         <img
-          id="daybackground"
+          id={s.daybackground}
           src={require("../images/dayBackground.png")}
           alt="background"
         />
         <img
-          id="garabgeDumpTransparent"
+          id={s.garabgeDumpTransparent}
           src={require("../images/garabgeDumpTransparent.png")}
           alt="background"
           style={{ height: garbageHeight }}
         />
         <img
-          id="sckyscrapersWOBackground"
+          id={s.sckyscrapersWOBackground}
           src={require("../images/sckyscrapersWOBackground.png")}
           alt="background"
           style={{ height: skyScraperHeight }}
         />
       </div>
 
-      <div id="textDisplay">Clean Thy Shiet</div>
+      <div id={s.textDisplay}>Clean Thy Shiet</div>
     </>
   );
 };

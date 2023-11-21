@@ -1,12 +1,15 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
+import "../../css/Basic.css";
 
 const StatisticsPage = () => {
   return (
-    <div className="homePageWrapper">
+    <>
       <Navbar />
-      GoalsPage
-    </div>
+      <div id="homePageWrapper" className="pageWrapper">
+        GoalsPage
+      </div>
+    </>
   );
 };
 

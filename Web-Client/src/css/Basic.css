@@ -1,15 +1,5 @@
-#root {
-  width: 100%;
-  height: 100%;
-  display: grid;
-}
-html {
-  width: 100%;
-  height: 100%;
-  background-color: gray;
-}
-
-body {
-  width: 100%;
-  height: 100%;
+.pageWrapper {
+  height: 100vh;
+  padding-top: 7vh;
+  background-color: #ebeae8;
 }

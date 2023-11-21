@@ -5,6 +5,8 @@ import HighchartsReact from "highcharts-react-official";
 import { useSelector } from "react-redux";
 import api from "../../api/axiosConfig";
 import { useEffect, useState } from "react";
+import "../../css/Basic.css";
+import "../../css/UserStatistics.css";
 
 const StatisticsPage = () => {
   const { auth } = useSelector((state) => state);
@@ -52,11 +54,10 @@ const StatisticsPage = () => {
 
   return (
     <>
-      <div className="homePageWrapper">
-        <Navbar />
-        StatisticsPage
+      <Navbar />
+      <div id="homePageWrapper" className="pageWrapper">
+        <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
-      <HighchartsReact highcharts={Highcharts} options={options} />
     </>
   );
 };
