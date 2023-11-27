@@ -1,5 +1,6 @@
 package dev.vbv.WebCleaning;
 
+import java.util.List;
 import java.util.Map;
 
 import org.bson.types.ObjectId;
@@ -21,6 +22,7 @@ public class User {
   private String name;
   private String password;
   private Map<String, Integer> statistics;
+  private List<String> goals;
 
 
   

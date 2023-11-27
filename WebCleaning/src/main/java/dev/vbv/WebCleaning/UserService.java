@@ -1,4 +1,5 @@
 package dev.vbv.WebCleaning;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +43,7 @@ public class UserService {
       return "User already exists";
       
     }
-    userRepository.insert(new User(null, name, password, new HashMap<String,Integer>()));
+    userRepository.insert(new User(null, name, password, new HashMap<String,Integer>(), null));
 
     mongoTemplate.update(User.class).matching(Criteria.where("name").is(name)).apply(new Update().set("password", password));
 
@@ -98,6 +99,26 @@ public class UserService {
     return oldMap;
   }
 
+  public List<String> getGoalsFromDB(String name) {
+
+
+    System.out.println(name);
+    Query query = new Query(Criteria.where("name").is(name));
+    List<String> oldList = mongoTemplate.find(query, User.class).get(0).getGoals();
+
+    return new ArrayList<>(oldList);
+
+  }
+
+  public Boolean postGoalsToDB(String name, List<String> goals) {
+
+
+      Query query = new Query(Criteria.where("name").is(name));
+
+      mongoTemplate.updateFirst(query, new Update().set("goals", goals), User.class);
+
+    return true;
+  }
 
 
 }
